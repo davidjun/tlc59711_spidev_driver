@@ -49,16 +49,16 @@ def main():
                 inp.setchannels(1)
                 inp.setrate(16000)
                 inp.setformat(alsaaudio.PCM_FORMAT_S16_LE)
-                inp.setperiodsize(500)
-                audio = ""
+                inp.setperiodsize(160)
                 leds[1] = (15000, 0, 0)
                 leds.show()
+                rf = open('/home/pi/data/recording.raw', 'wb')
                 while(GPIO.input(PIN_BUTTON)==0): # we keep recording while the button is pressed
+                    # Read data from device
                     l, data = inp.read()
                     if l:
-                        audio += data
-                rf = open('/home/pi/data/recording.wav', 'w')
-                rf.write(audio)
+                        rf.write(data)
+    
                 rf.close()
                 inp = None
                 leds[1] = (0, 0, 0)

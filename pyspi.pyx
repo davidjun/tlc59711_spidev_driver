@@ -9,7 +9,7 @@ cdef extern from "spi.h":
 def setup(device: bytes, speed: int) -> int:
     return spi_setup(device, speed)
 
-def write(fd: int, tx: bytes, len: int) -> int:
+def write(fd: int, tx: bytearray, len: int) -> int:
     return spi_write(fd, tx, len)
 
 def try_lock() -> int:

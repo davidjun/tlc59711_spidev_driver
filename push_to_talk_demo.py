@@ -66,8 +66,6 @@ def main():
                 leds[1] = (0, 0, 0)
                 leds.show()
 
-                button_state = IDLE
-            elif(button_state == RELEASED):
                 os.system('aplay -f S16_LE -r 16000 -D hw:2,0 ~/data/recording.raw')
 #                os.system('aplay -D "plughw:2,0" > /dev/null 2>&1'.format(path, path))
                 button_state = IDLE

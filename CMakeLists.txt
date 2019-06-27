@@ -15,5 +15,6 @@ add_executable(spidev_test
 )
 
 target_link_libraries(spidev_test
+  -lpthread
 #  spi
 )

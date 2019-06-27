@@ -11,21 +11,20 @@ import time
 PIN_BUTTON = 7
 leds = TLC59711(pyspi, auto_show=False)
 
-toggle = True
 def button_callback(channel):
-    if toggle:
-        leds[0] = (5000, 15000, 15000)
-    else:
-        leds[0] = (0,0,0)
-    leds.show()
-    
-    toggle = not toggle
-    
+    if(channel == PIN_BUTTON):
+        val = GPIO.input(channel)
+        if(val == 0):
+            # pushed
+            leds[0] = (5000, 15000, 15000)
+        else:
+            leds[0] = (0,0,0)
+        leds.show()    
   
 def main():
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(PIN_BUTTON, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-    GPIO.add_event_detect(PIN_BUTTON, GPIO.FALLING, callback=button_callback, bouncetime=100)
+    GPIO.add_event_detect(PIN_BUTTON, GPIO.BOTH, callback=button_callback, bouncetime=300)
 
     try:
         while True:

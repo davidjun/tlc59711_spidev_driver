@@ -5,14 +5,14 @@ include_directories(
   include
 )
 
-#add_library(spi_lib
-#  src/spi.c
-#)
+add_library(spi
+  src/spi.c
+)
 
 add_executable(spidev_test
   src/spi.c
 )
 
 target_link_libraries(spidev_test
-#  spi_lib
+#  spi
 )

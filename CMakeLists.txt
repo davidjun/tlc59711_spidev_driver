@@ -5,7 +5,8 @@ include_directories(
   include
 )
 
-add_library(spi
+set(CMAKE_POSITION_INDEPENDENT_CODE "True")
+add_library(spi STATIC
   src/spi.c
 )
 

@@ -30,3 +30,8 @@
 *.exe
 *.out
 *.app
+
+__pycache__/
+lib/
+pyspi.c
+

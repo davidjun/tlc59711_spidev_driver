@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Push button to record from mic. Releasing button plays back recording
 # Author: David Jun
@@ -7,6 +7,8 @@ from tlc59711 import TLC59711
 import pyspi
 import RPi.GPIO as GPIO
 import time
+
+GPIO.setwarnings(False)
 
 PIN_BUTTON = 7
 leds = TLC59711(pyspi, auto_show=False)
@@ -33,7 +35,7 @@ def main():
         print("Keyboard Interrupt")
     finally:
         GPIO.cleanup() 
-        print "   Cleaned up pins"
+        print("   Cleaned up pins")
  
 ##########
  

@@ -139,7 +139,7 @@ class TLC59711:
     r0 = _GS_Value(26)
 
 
-    def __init__(self, spi, *, auto_show=True):
+    def __init__(self, spi, auto_show=True):
         self._spi = spi
         self._dev = b"/dev/spidev0.0"
         self._baudrate = 1000000

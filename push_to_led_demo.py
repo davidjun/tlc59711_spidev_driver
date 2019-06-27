@@ -30,6 +30,7 @@ def main():
 
     try:
         while True:
+            # TODO: do a sanity check (state of led vs pushbutton and fix here)
             time.sleep(1)
     except KeyboardInterrupt:
         print("Keyboard Interrupt")

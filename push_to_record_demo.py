@@ -38,6 +38,7 @@ def button_callback(channel):
         leds.show()    
   
 def main():
+    global button_state
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(PIN_BUTTON, GPIO.IN, pull_up_down=GPIO.PUD_UP)
     GPIO.add_event_detect(PIN_BUTTON, GPIO.BOTH, callback=button_callback, bouncetime=300)

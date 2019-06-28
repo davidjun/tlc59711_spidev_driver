@@ -6,8 +6,8 @@ spi_extension = Extension(
     name="pyspi",
     sources=["pyspi/pyspi.pyx"],
     libraries=["spi"],
-    library_dirs=["lib"],
-    include_dirs=["include"]
+    library_dirs=["pyspi/lib"],
+    include_dirs=["pyspi/include"]
 )
 setup(
     name="pyspi",

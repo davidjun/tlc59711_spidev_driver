@@ -133,12 +133,14 @@ int spi_write(int fd, uint8_t *tx, int len)
 	if (ret < 1)
 		pabort("can't send spi message");
 
+#ifdef DEBUG
 	for (ret = 0; ret < len; ret++) {
 		if (!(ret % 6))
 			puts("");
 		printf("%.2X ", rx[ret]);
 	}
 	puts("");
+#endif
 	return ret;
 }
 

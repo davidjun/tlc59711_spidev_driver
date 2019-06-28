@@ -35,3 +35,5 @@ __pycache__/
 lib/
 pyspi.c
 *.pyc
+dist/
+*.egg-info/

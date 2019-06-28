@@ -4,7 +4,7 @@ from Cython.Build import cythonize
 
 spi_extension = Extension(
     name="pyspi",
-    sources=["pyspi.pyx"],
+    sources=["pyspi/pyspi.pyx"],
     libraries=["spi"],
     library_dirs=["lib"],
     include_dirs=["include"]
